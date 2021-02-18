@@ -65,27 +65,8 @@ const styles = ({ font, base, light, link, baseBackground, mq }) => ({
 export function StyleGuideRenderer({ classes, title, homepageUrl, children }) {
   return (
     <div className={classes.root}>
-      <header className={classes.header}>
-        <div className={classes.content}>
-          <div className={classes.bar}>
-            <Logo>
-              <a className={classes.headerLink} href="#">
-                {title}
-              </a>
-            </Logo>
-            <nav className={classes.nav}>
-              <a className={classes.headerLink} href="https://github.com/Adphorus/react-date-range">
-                GitHub
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
       <main className={classes.content}>
         {children}
-        <footer className={classes.footer}>
-          <Markdown text={`Created with [React Styleguidist](${homepageUrl}) ❤️`} />
-        </footer>
       </main>
     </div>
   );

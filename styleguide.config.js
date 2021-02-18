@@ -4,7 +4,6 @@ const moduleSource = isDEV ? 'src' : 'src';
 
 module.exports = {
   //ignore: ['**/*.test.js', '**/DateInput/*', '**/DayCell/*', '**/Month/*', '**/InputRangeField/*'],
-  title: 'react-date-range',
   showSidebar: false,
   template: {
     head: {
@@ -39,12 +38,6 @@ module.exports = {
     },
   },
 
-  getComponentPathLine(componentPath) {
-    const arr = componentPath.split('/');
-    const name = arr[arr.length - 2];
-    return `import { ${name} } from 'react-date-range';`;
-  },
-
   styles: function styles(theme) {
     return {
       Playground: {
@@ -57,7 +50,6 @@ module.exports = {
       },
       Code: {
         code: {
-          // make inline code example appear the same color as links
           color: theme.color.link,
           fontSize: 14,
         },
@@ -66,7 +58,6 @@ module.exports = {
   },
   // Override Styleguidist components
   styleguideComponents: {
-    LogoRenderer: path.join(__dirname, 'demo/components/Logo'),
     StyleGuideRenderer: path.join(__dirname, 'demo/components/StyleGuide'),
     SectionsRenderer: path.join(__dirname, 'demo/components/SectionsRenderer'),
   },
@@ -96,26 +87,10 @@ module.exports = {
   pagePerSection: false,
   sections: [
     {
-      name: 'Getting Started',
-      content: 'demo/README.md',
-      sectionDepth: 0,
-    },
-    {
-      name: 'Components',
       sections: [
         {
           components: () => ['src/components/DateRangePicker/index.js'],
           usageMode: 'hide',
-        },
-        {
-          components: () => ['src/components/DateRange/index.js'],
-          usageMode: 'hide',
-        },
-        {
-          components: () => ['src/components/Calendar/index.js'],
-        },
-        {
-          components: () => ['src/components/DefinedRange/index.js'],
         },
       ],
       sectionDepth: 0,
